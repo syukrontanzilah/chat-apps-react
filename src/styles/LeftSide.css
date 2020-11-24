@@ -1,0 +1,43 @@
+.leftside {
+    background-color: #3866E6;
+    width: 360px;
+    padding: 25px;
+}
+
+.chatApps {
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.leftside__user {
+display: flex;
+flex-direction: row;
+background-color: white;
+border-radius: 10px;
+padding: 20px 5px 20px 10px;
+align-items: center;
+}
+
+.leftside__usernameWrap {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    flex: 1;
+}
+
+.leftSide__username {
+    font-size: 18px;
+    font-weight: 700;
+    color: #3866E6;
+    line-height: 0.6cm;
+    margin-bottom: 0px;
+}
+
+.leftSide__position {
+    font-size: 14px;
+    font-weight: 400;
+    color: #3866e6;
+    line-height: 0.4cm;
+}

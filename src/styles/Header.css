@@ -1,0 +1,17 @@
+.header__register {
+    flex-direction: row;
+    display: flex;
+    /* background-color: wheat; */
+    margin-top: 20px;
+}
+
+.nav__title{
+    margin-right: 35px;
+    font-size: 20px;
+    color: #3866E5;
+}
+
+.nav__title:hover{
+   font-weight: 600;
+   cursor: pointer;
+}

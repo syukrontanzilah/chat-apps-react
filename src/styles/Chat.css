@@ -1,0 +1,141 @@
+.chat__page {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat__header {
+    display: flex;
+    flex-direction: row;
+    height: 70px;
+    justify-content: space-between;
+    background: white;
+    align-items: center;
+    /* border: 2px solid lightblue; */
+    box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.8);
+    /* border-bottom-color: lightblue;
+    border-bottom-width: 1; */
+    position: relative;
+    margin-bottom: 3px;
+}
+
+.chat__user {
+    display: flex;
+    margin-left: 20px;
+}
+
+.chat__username {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.search__menu {
+    margin-right: 10px;
+}
+
+.user__name {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 25px;
+    color: #282828;
+}
+
+.last__online{
+    font-weight: 300;
+    font-size: 13px;
+    color: #828282;
+    margin-top: -10px;
+}
+
+.chat__body {
+    flex: 1;
+    background-color: white;;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+    padding: 0;
+    overflow: scroll;
+}
+
+.chat__wrap {
+    flex: 1;
+    background-color: white;;
+    /* padding: 20px; */
+    padding: 0 20px 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-top: 20px;
+    /* overflow: scroll;  */
+}
+
+
+.chat__messageMe {
+    background-color: #3866E5;
+    border-radius: 20px;
+    max-width: 80%;
+    padding: 10px;
+    margin-left: auto;
+    line-height: 0.6cm;
+}
+
+.text__messageMe {
+    color: white;
+    font-size: 15px;
+}
+
+.chat__dateWrap {
+    align-self: flex-end;
+    margin-bottom: 5px;
+}
+
+.chat__date {
+    font-size: xx-small;
+    color: #828282;
+}
+
+.chat__messageOther {
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    max-width: 80%;
+    padding: 10px;
+    margin-right: auto;
+    line-height: 0.6cm;
+}
+
+.text__messageOther {
+  color:  #282828;
+  font-size: 15px;
+}
+
+.chat__dateWrapOther {
+    margin-bottom: 5px;
+}
+
+.chat__footer{
+    height: 70px;
+    background-color: #F2F2F2;
+    /* padding-right: 10px;
+    padding-left: 10px; */
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.chat__footer > form {
+    flex:1;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.chat__footer > form > input {
+    flex: 1;
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    padding: 8px;
+    padding-left: 20px;
+}
