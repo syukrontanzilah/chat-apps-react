@@ -1,3 +1,9 @@
+// COLOR - Variable
+$primary-blue : #3866E5;
+$primary-yellow :  #ffbd26;
+$gray-text : #828282;
+
+
 .get__started {
     /* background-color: red; */
     display: flex;
@@ -14,7 +20,7 @@
 }
 
 .chat__apps__title {
-    color: #3866E5;
+    color: $primary-blue;
     font-size: 24px;
     font-weight: 700;
     cursor: pointer;
@@ -38,12 +44,12 @@
 }
 
 .header__nav:hover{
-    color:  #ffbd26;
+    color:  $primary-yellow;
 }
 
 .button__nav__login{
     background-color: #fff;
-    color: #3866E5 ;
+    color: $primary-blue ;
     padding: 5px 25px;
     font-size: 20px;
     border-radius: 10px;
@@ -52,7 +58,7 @@
 }
 
 .button__nav__login:hover{
-    background-color: #3866e5;
+    background-color: $primary-blue;
     color: white ;
     cursor: pointer;
     transform: scale(1.02);
@@ -74,7 +80,7 @@
 .landing__openTitle{
     font-weight: 700;
     font-size: 38px;
-    color: #3866e5;
+    color: $primary-blue;
     line-height: 42px;
 }
 
@@ -92,39 +98,39 @@
 .button__registerUser{
     font-size: 20px;
     color: white;
-    background-color: #3866e5;
+    background-color: $primary-blue;
     padding: 8px 20px;
     border-radius: 10px;
     margin-right: 30px;
     cursor: pointer;
-    border: 1px solid #3866E5;
+    border: 1px solid $primary-blue;
     transition: transform 450ms;
 }
 
 .button__registerRoom{
     font-size: 20px;
-    color: #3866E5;
-    border: 1px solid #3866E5;
+    color: $primary-blue;
+    border: 1px solid $primary-blue;
     padding:8px 15px;
     border-radius: 10px;
     transition: transform 450ms;
 }
 
 .button__registerUser:hover{
-    background-color: #ffbd26;
+    background-color: $primary-yellow;
     cursor: pointer;
-    color: #3866e5;
-    border: 1px solid #ffbd26;
+    color: $primary-blue;
+    border: 1px solid $primary-yellow;
     transform: scale(1.05);
 
 }
 
 
 .button__registerRoom:hover{
-    background-color: #3866E5;
+    background-color: $primary-blue;
     cursor: pointer;
     color: white;
-    border: 1px solid #3866e5;
+    border: 1px solid $primary-blue;
     transform: scale(1.05);
 }
 
@@ -155,7 +161,7 @@ padding-top: 150px;
 
 .landing__centerDesc{
     font-size: 22px;
-    color: #828282;
+    color: $gray-text;
     line-height: 38px;
 }
 
@@ -195,7 +201,7 @@ padding: 20px;
     font-weight: 700;
     font-size: 24px;
     line-height: 28px;
-    color: #3866e5;
+    color: $primary-blue;
 }
 
 .centerOption__desc{
@@ -232,7 +238,7 @@ padding: 20px;
 
 .button__try {
     background-color: white;
-    color: #3866e5;
+    color: $primary-blue;
     padding: 12px;
     width: 200px;
     align-items: center;
@@ -246,7 +252,7 @@ padding: 20px;
 
 .button__try:hover {
     cursor: pointer;
-    background-color:  #ffbd26;
+    background-color:  $primary-yellow;
     transform: scale(1.05);
     font-weight: 700;
 }
@@ -265,14 +271,14 @@ padding: 20px;
 
 .footer__landingPage {
     display: flex;
-    border-top: 1px solid #3866e5;
+    border-top: 1px solid $primary-blue;
     padding: 30px 0;
     width: 100%;
     justify-content: space-between;
 }
 
 .footer__titileChat{
-    color: #3866e5;
+    color: $primary-blue;
     font-size: 28px;
     font-weight: 700;
     line-height: 32.81px;
@@ -280,14 +286,14 @@ padding: 20px;
 }
 
 .footer__titleHead{
-    color: #3866e5;
+    color: $primary-blue;
     font-size: 22px;
     font-weight: 700;
     line-height: 25.78px;
 }
 
 .footer__title {
-    color: #3866e5;
+    color: $primary-blue;
     font-size: 20px;
     font-weight: 400;
     line-height: 30px;
@@ -296,7 +302,7 @@ padding: 20px;
 .footer__titileChat:hover,
 .footer__titleHead:hover,
 .footer__title:hover {
-    color: #ffbd26;
+    color: $primary-yellow;
     cursor: pointer;
 }
 

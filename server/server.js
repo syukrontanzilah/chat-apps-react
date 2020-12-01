@@ -1,17 +1,13 @@
-const express = require('express');
-const http = require("http")
-const app = express()
-const server = http.createServer(app)
-const socket = require('socket.io');
-const io = socket(server);
+const app = require('express')()
+const http = require('http').createServer(app)
+const io = require('socket.io')(http)
 
-io.on("connection", socket => {
-    socket.emit("your id: ", socket.id);
-    socket.on("send message", body => {
-        io.emit("message", body)
+io.on('connection', socket => {
+    socket.on('message', ({nama, pesannya}) => {
+        io.emit('message', {nama, pesannya})
     })
 })
 
-
-server.listen(8000, () => console.log("server is running on port 8000"))
-
+http.listen(4000, function(){
+    console.log('listening on port 4000')
+})

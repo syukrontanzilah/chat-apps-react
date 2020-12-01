@@ -1,3 +1,13 @@
+// COLOR - Variable
+$primary-blue : #3866E5;
+$primary-yellow :  #ffbd26;
+$gray-text : #828282;
+$gray-dak : #282828;
+$gray-light :  #f2f2f2;
+$gray-light-2 : #E9EDF6;
+$gray-light-3 :  #e0e0e0;
+$blue-hover : #7593e5;
+
 .login {
     /* margin: 20px auto; */
     /* width: 20rem; */
@@ -5,7 +15,7 @@
     width: 100%;
     /* padding: 20px; */
     box-sizing: border-box;
-    background-color: #3866E5;
+    background-color: $primary-blue;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,7 +45,7 @@ z-index: 5;
 
 .login__title {
     margin-bottom: 10px;
-    color: #3866E6;
+    color: $primary-blue;
     font-size: 26px;
 }
 
@@ -69,11 +79,11 @@ z-index: 5;
 }
 .desc__button {
     margin-left: auto;
-    color: gray;
+    color: $gray-text;
     margin-bottom: 30px;
 }
 .register__span{
-    color: #3866E6;
+    color: $primary-blue;
     cursor: pointer;
     font-weight: bold;
 }

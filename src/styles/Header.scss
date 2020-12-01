@@ -1,3 +1,10 @@
+// COLOR - Variable
+$primary-blue : #3866E5;
+$primary-yellow :  #ffbd26;
+$gray-text : #828282;
+$gray-dak : #282828;
+$gray-light :  #f2f2f2;
+
 .header__register {
     flex-direction: row;
     display: flex;
@@ -8,7 +15,7 @@
 .nav__title{
     margin-right: 35px;
     font-size: 20px;
-    color: #3866E5;
+    color: $primary-blue;
 }
 
 .nav__title:hover{

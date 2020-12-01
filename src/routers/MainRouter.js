@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
-import {LoginPage, RegisterPage, HomePage, GetStartedPage} from '../pages'
+import {LoginPage, RegisterPage, HomePage, GetStartedPage,} from '../pages'
 import {routes,routesAuth} from './routes'
 import {useSelector, useDispatch} from 'react-redux'
 import { getData } from '../utils/localStorage';
@@ -34,20 +34,20 @@ const MainRouter = () => {
     }
   },[isLoggedIn])
 
-
+const local = localStorage.getItem('token')
   return (
     <div className="mainApp__wrapper">
 
     <Router>
       <Switch>
         {
-          activeRoute.map((route, i)=>{
-            return (
-              <Route path={route.path} exact={route.exact}>
-                {<route.component />}
-              </Route>
-            )
-          })
+          !local ? 
+          <Route path='/'>
+           <LoginPage />
+          </Route> : <Route path='/'>
+            <HomePage />
+          </Route> 
+
         }
         
         <Route path="/register">
@@ -68,6 +68,10 @@ const MainRouter = () => {
 
         <Route path="/get-started">
           <GetStartedPage/>
+        </Route>
+
+        <Route path="/home">
+          <HomePage/>
         </Route>
 
       </Switch>

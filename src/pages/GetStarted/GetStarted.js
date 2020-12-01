@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../styles/getStarted.css'
+import '../../styles/getStarted.scss'
 import { BCKGGetStarted2, BCKGGetStarted1, BCKGGetStarted3 } from '../../assets/image'
 import HeaderGS from './HeaderGS'
 import CenterGS from './CenterGS'

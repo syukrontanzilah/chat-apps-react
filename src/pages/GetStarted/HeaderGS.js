@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../styles/getStarted.css'
+import '../../styles/getStarted.scss'
 
 const HeaderGS = () => {
     return (

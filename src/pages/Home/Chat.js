@@ -1,10 +1,15 @@
-import React, {useState, useEffect, useRef} from 'react'
-import '../../styles/Chat.css'
-import { Avatar, IconButton } from '@material-ui/core'
-import {AttachFile, MoreVert, SearchOutlined, Message, InsertEmoticon, Mic, Send,} from '@material-ui/icons' 
+import { Avatar, IconButton } from '@material-ui/core';
+import { AttachFile, InsertEmoticon, MoreVert, SearchOutlined, Send } from '@material-ui/icons';
 import DoneAllIcon from '@material-ui/icons/DoneAll';
-import ScrollToBottom from 'react-scroll-to-bottom'
-import io from 'socket.io-client'
+import React, { useEffect, useState } from 'react';
+import ScrollToBottom from 'react-scroll-to-bottom';
+import io from 'socket.io-client';
+import '../../styles/Chat.scss';
+
+
+
+const socket = io.connect('http://localhost:4000')
+
 
 const Chat = () => {
     const [message, setMessage] = useState("")
@@ -12,14 +17,53 @@ const Chat = () => {
         {
             pesan:'hai how are you ?',
             waktu:'10.10',
-            user:'A'
+            user:'A',
+            image:''
         },
         {
             pesan:'Halo',
             waktu:'10.11',
-            user:'B'
-        }
+            user:'B', 
+            image:''
+        }, {
+            pesan:'Halo',
+            waktu:'10.11',
+            image:'https://i.pinimg.com/originals/e4/04/e8/e404e8a18cb07541d6cdece1877f21d7.jpg',
+            user:'A'
+        }, 
     ])
+
+    // CONTOH
+    // const [state, setStaet] = useState({ pesannya: '', nama: '' })
+    // const [chat, setChat] = useState([])
+    // useEffect(() => {
+    //     socket.on('message', ({ nama, pesannya }) => {
+    //       setChat([...chat, { nama, pesannya }])
+    //     })
+    //   })
+    
+    //   const onTextChange = e => {
+    //     setStaet({ ...state, [e.target.nama]: e.target.value })
+    //   }
+    
+    //   const onMessageSubmit = e => {
+    //     e.preventDefault()
+    //     const { nama, pesannya } = state
+    //     socket.emit('message', { nama, pesannya })
+    //     setStaet({ pesannya: '', nama })
+    //   }
+    
+    //   const renderChat = () => {
+    //     return chat.map(({ nama, pesannya }, index) => (
+    //       <div key={index}>
+    //         <h3>
+    //           {nama}: <span>{pesannya}</span>
+    //         </h3>
+    //       </div>
+    //     ))
+    //   }
+      //END CONTOH
+
 
     const onSendMessage =(e) => {
         e.preventDefault();
@@ -62,7 +106,7 @@ const Chat = () => {
                     <Avatar src="https://i.pinimg.com/originals/e4/04/e8/e404e8a18cb07541d6cdece1877f21d7.jpg"/>
                     <div className="chat__username">
                         <label className="user__name">Jocelyn</label>
-                        <small className="last__online">Active now</small>
+                        <small className="last__online">Online</small>
                     </div>
                 </div>
                 <div className="search__menu">
@@ -79,12 +123,23 @@ const Chat = () => {
 <ScrollToBottom className="chat__body">
 <div className="chat__wrap">
 
+  <div className="feed__dateChat">
+<div className="feed__date">
+  Today
+</div>
+  </div>
+
 {/* chat me */}
 {pesan.map((data, index) => {
     if(data.user === "A"){
 return (
     <React.Fragment key={index}>
     <div className="chat__messageMe">
+    {data.image &&
+                (<div>
+                <img className="image__send" src={data.image}/>
+              </div>)
+                }
         <small className="text__messageMe">{data.pesan}</small>
     </div>
     <div className="chat__dateWrap">
@@ -97,6 +152,11 @@ return (
         return(
         <React.Fragment>
             <div className="chat__messageOther">
+                {data.image &&
+                (<div>
+                <img className="image__send" src={data.image}/>
+              </div>)
+                }
         <small className="text__messageOther">{data.pesan}</small>
     </div>
     <div className="chat__dateWrapOther">
@@ -106,19 +166,19 @@ return (
         </React.Fragment>
         )}
 })}
+
+{/* image chat */}
+<div className="chat__messageOther">
+<div>
+  <img className="image__send" src="https://i.pinimg.com/originals/e4/04/e8/e404e8a18cb07541d6cdece1877f21d7.jpg"/>
+</div>
+<small className="text__messageOther">hallo look at picts i send you</small>
+</div>
+<div className="chat__dateWrapOther">
+        <small className="chat__date">12.00</small>
+    </div>
   
 
-    {/* chat other */}    
-        {/* chat other */}
-        {/* <div className="chat__messageOther">
-        <small className="text__messageOther">How are you ?</small>
-    </div>
-    <div className="chat__dateWrapOther">
-    <small className="chat__date">10:14AM</small>
-    </div> */}
-    {/* <div>
-    {message}
-    </div> */}
 
 </div>
 </ScrollToBottom>
@@ -129,8 +189,17 @@ return (
                 <InsertEmoticon/> 
                </IconButton>
                <IconButton>
-                <AttachFile/> 
+                <AttachFile onClick={() =>{}}/> 
                </IconButton>
+              
+              <div className="group__floatingIcon">
+              <IconButton>
+                <InsertEmoticon/> 
+               </IconButton>
+               <IconButton>
+                <InsertEmoticon/> 
+               </IconButton>
+              </div>
 
 <form>
     <input

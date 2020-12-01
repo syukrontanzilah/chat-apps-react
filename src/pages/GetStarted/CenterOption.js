@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../styles/getStarted.css'
+import '../../styles/getStarted.scss'
 import { IconChat, IconGroup, IconCreate } from '../../assets/image'
 
 const Card = (props) => {

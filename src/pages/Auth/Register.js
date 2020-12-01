@@ -3,9 +3,9 @@ import {Link, useHistory} from 'react-router-dom'
 import axios from 'axios';
 import {storeData} from '../../utils/localStorage';
 import jwt_decode from 'jwt-decode';
-import '../../styles/login.css'
+import '../../styles/login.scss'
 import { Input, Header  } from '../../components';
-import '../../styles/register.css'
+import '../../styles/register.scss'
 import { LogoRegister, LogoRegister2 } from '../../assets';
 
 

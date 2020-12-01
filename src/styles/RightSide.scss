@@ -1,0 +1,156 @@
+// COLOR - Variable
+$primary-blue : #3866E5;
+$primary-yellow :  #ffbd26;
+$gray-text : #828282;
+$gray-text-2:  #4f4f4f;
+$gray-dak : #282828;
+$gray-light :  #f2f2f2;
+$gray-light-2 : #E9EDF6;
+$gray-light-3 :  #e0e0e0;
+$blue-hover : #7593e5;
+
+.rightside {
+    background-color: $gray-light-2;
+    /* width: 360px; */
+    flex: 0.2;
+    overflow: scroll;
+
+}
+
+.rightside__title {
+    height: 70px;
+    background-color: $primary-blue;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.rightside__desc{
+    color: white;
+    font-size: 22px;
+}
+
+.right__component {
+    background-color: white;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.contact__rightInfo {
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid $gray-light-3;
+}
+
+.contact__rightName {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.rightSide__name {
+    font-size: 22px;
+    line-height: 25.78px;
+    font-weight: 700;
+    color: $gray-dak;
+}
+
+.rightSide__user{
+    font-weight: 300;
+    line-height: 16px;
+    font-size: 12px;
+    color: $gray-text;
+}
+
+.status__edit{
+    display: flex;
+    justify-content: space-between;
+    color: $primary-blue;
+    margin-top: 15px;
+}
+.status__edited{
+    font-size: 12px;
+}
+
+.status__rightside  {
+    font-size: 15px;
+    line-height: 18px;
+    color: $gray-text-2;
+}
+
+.add__roomMember{
+    background-color: $primary-blue;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 15px;
+    font-size: 12px;
+    height: 20px;
+}
+
+.wrap__imgGroup{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wrap__img__group {
+    display: flex;
+    flex-direction: row;
+
+}
+.integer__group{
+    color: $gray-text;
+}
+.photos__multimedia {
+    color: $primary-blue;
+    margin-top: 20px;
+}
+
+.photo__andMultimedia {
+margin-bottom: 8px;
+margin-right: 4px;
+}
+
+.photoMultimedia{
+width: 60px;
+height: 60px;
+border-radius: 10px;
+cursor: pointer;
+}
+.wrap__photo {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.how__to {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.pdf__howto {
+    color: white;
+    background-color: $primary-blue;
+    padding: 2px;
+    border-radius: 5px;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.desc__howTo {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.09px;
+    color: $gray-dak;
+}
+
+.yellow {
+    background-color: $primary-yellow;
+}
+
+.red {
+    background-color: green;
+}
