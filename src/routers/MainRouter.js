@@ -7,13 +7,11 @@ import { getData } from '../utils/localStorage';
 import { WhyUsPage, LearnMorePage, FeaturesPage } from '../pages/Info';
 // import { GetStartedPage } from '../pages/GetStarted';
 
-
 const MainRouter = () => {
   const [activeRoute, setActiveRoute] = useState(routesAuth)
   const {isLoggedIn} = useSelector(state => state.authState)
   const token = getData("token")
   const dispatch = useDispatch()
-
 
   useEffect(()=>{
     if(token){
@@ -40,16 +38,6 @@ const local = localStorage.getItem('token')
 
     <Router>
       <Switch>
-        {
-          !local ? 
-          <Route path='/'>
-           <LoginPage />
-          </Route> : <Route path='/'>
-            <HomePage />
-          </Route> 
-
-        }
-        
         <Route path="/register">
           <RegisterPage/>
         </Route>
@@ -73,6 +61,18 @@ const local = localStorage.getItem('token')
         <Route path="/home">
           <HomePage/>
         </Route>
+        <Route path='/'>
+            <HomePage />
+          </Route> 
+        
+              {
+          !local ? 
+          <Route path='/'>
+           <LoginPage />
+          </Route> : <Route path='/'>
+            <HomePage />
+          </Route> 
+        }
 
       </Switch>
       

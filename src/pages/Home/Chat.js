@@ -5,11 +5,9 @@ import React, { useEffect, useState } from 'react';
 import ScrollToBottom from 'react-scroll-to-bottom';
 import io from 'socket.io-client';
 import '../../styles/Chat.scss';
-
-
+import FloatingButton from '../../components/molecules/FloatingButton';
 
 const socket = io.connect('http://localhost:4000')
-
 
 const Chat = () => {
     const [message, setMessage] = useState("")
@@ -32,6 +30,7 @@ const Chat = () => {
             user:'A'
         }, 
     ])
+    const [iconSend, setIconSend] = useState('gray')
 
     // CONTOH
     // const [state, setStaet] = useState({ pesannya: '', nama: '' })
@@ -168,7 +167,7 @@ return (
 })}
 
 {/* image chat */}
-<div className="chat__messageOther">
+{/* <div className="chat__messageOther">
 <div>
   <img className="image__send" src="https://i.pinimg.com/originals/e4/04/e8/e404e8a18cb07541d6cdece1877f21d7.jpg"/>
 </div>
@@ -176,7 +175,7 @@ return (
 </div>
 <div className="chat__dateWrapOther">
         <small className="chat__date">12.00</small>
-    </div>
+    </div> */}
   
 
 
@@ -185,23 +184,21 @@ return (
 
 {/* CHAT FOOTER */}
 <div className="chat__footer">
-                <IconButton>
-                <InsertEmoticon/> 
+            <IconButton>
+            <InsertEmoticon/> 
                </IconButton>
-               <IconButton>
-                <AttachFile onClick={() =>{}}/> 
-               </IconButton>
-              
-              <div className="group__floatingIcon">
-              <IconButton>
-                <InsertEmoticon/> 
-               </IconButton>
-               <IconButton>
-                <InsertEmoticon/> 
-               </IconButton>
-              </div>
 
-<form>
+               <IconButton>
+            <AttachFile/> 
+               </IconButton>
+
+               <div className="floating__button__attachfile">
+               <FloatingButton/>
+               </div>
+               {/* <IconButton>
+                <AttachFile onClick={() =>{}}/> 
+               </IconButton> */}
+<form onSubmit={(e) => onSendMessage(e)}>
     <input
     placeholder="Type a message"
     type="text"
@@ -211,10 +208,12 @@ return (
 </form>
 
                 <IconButton
+                disabled={message ? false:true}
+                style={{backgroundColor: message.length > 0 ? 'lightgray' : 'transparent'}}
                 onClick={onSendMessage}
                 type="submit"
                 >
-                <Send/> 
+                <Send style={{color: message.length > 0 ? 'blue' : 'gray'}}/> 
                </IconButton>
 
 </div>

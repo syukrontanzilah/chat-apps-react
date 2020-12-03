@@ -24,6 +24,11 @@ $gray-text : #828282;
     font-size: 24px;
     font-weight: 700;
     cursor: pointer;
+    text-decoration: none;
+}
+
+.chat__apps__title:hover{
+    text-decoration: none;
 }
 
 .nav__right__gs {
@@ -41,10 +46,13 @@ $gray-text : #828282;
     /* background-color: wheat; */
     margin-right: 35px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .header__nav:hover{
     color:  $primary-yellow;
+    text-decoration: none;
+
 }
 
 .button__nav__login{
@@ -53,7 +61,7 @@ $gray-text : #828282;
     padding: 5px 25px;
     font-size: 20px;
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     transition: transform 450ms;
 }
 
@@ -282,7 +290,12 @@ padding: 20px;
     font-size: 28px;
     font-weight: 700;
     line-height: 32.81px;
+   
     
+}
+.footer__options {
+    display: flex;
+    flex-direction: column;
 }
 
 .footer__titleHead{
@@ -304,6 +317,7 @@ padding: 20px;
 .footer__title:hover {
     color: $primary-yellow;
     cursor: pointer;
+    text-decoration: none;
 }
 
 

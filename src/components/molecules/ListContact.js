@@ -1,17 +1,27 @@
 import React from 'react'
-import {Avatar} from '@material-ui/core';
+import {Avatar, Badge} from '@material-ui/core';
 import '../../styles/LeftSide.scss'
+// import { Badge } from '../atoms';
 
 const ListContact = (props) => {
     return (
-        <div className="listContact">
-            <Avatar src="https://previews.123rf.com/images/sevendeman/sevendeman1711/sevendeman171100006/90385266-head-shot-of-normal-face-asian-man-.jpg"/>
-            <div className="list__contactName">
-                <div className="name__date">
-                <p className="name__contact">Jocelyne</p>
-                {/* <p className="date__contact">2 Min ago</p> */}
+        <div 
+        onClick={()=> alert("list contack")}
+        className="listContact">
+            <Avatar src={props.image}/>
+            <div style={{
+                // textOverflow:'ellipsis', 
+                // whiteSpace:'nowrap', 
+                // width:'50px'
+                }} className="list__contactName list__room">
+                <a className="name__contact">{props.name}</a>
+                <small  className="last__message">{props.lastmessage}</small>
+            </div>
+            <div className="group__badge__date">
+                <a className="date__badge__right">10.37</a>
+                <div className="badge__wrap">
+                <Badge badgeContent={props.badgeNumber} color="secondary"/>
                 </div>
-            <p className="last__message">Hey there...</p>   
             </div>
 
           

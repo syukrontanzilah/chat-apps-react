@@ -7,6 +7,7 @@ $gray-light :  #f2f2f2;
 $gray-light-2 : #E9EDF6;
 $gray-light-3 :  #e0e0e0;
 $blue-hover : #7593e5;
+$blue-dark : #2d4eab;
 
 .leftside {
     background-color: $primary-blue;
@@ -35,13 +36,13 @@ $blue-hover : #7593e5;
 }
 
 .leftside__user {
-display: flex;
-flex-direction: row;
-background-color: white;
-border-radius: 10px;
-padding: 20px 5px 20px 10px;
-align-items: center;
-box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 .leftside__usernameWrap {
@@ -56,7 +57,6 @@ box-sizing: border-box;
     font-weight: 700;
     color: $primary-blue;
     line-height: 0.6cm;
-    margin-bottom: 0px;
 }
 
 .leftSide__position {
@@ -66,6 +66,9 @@ box-sizing: border-box;
     line-height: 0.4cm;
 }
 
+.more__leftsideUser{
+    cursor: pointer;
+}
 
 .tab__contactAndRoom{
 margin-top: 20px;
@@ -78,20 +81,29 @@ margin-top: 20px;
 .dropDown__leftSide{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    color: white;
 }
 
 .add__room{
     color: white;
-    background-color: rgb(39, 39, 90);
-    border-radius: 10px;
+    background-color: $blue-dark;
+    border-radius: 15px;
     font-size: 12px;
     height: 30px;
     align-items: center;
-    padding:5px 20px;
+    justify-content: center;
+    display: flex;
+    width: 60px;
+    transition: transform 400ms;
+    font-weight: 400;
+    // padding:5px 20px;
 }
 .add__room:hover{
     cursor: pointer;
-    opacity: 0.8;
+    color: $primary-blue;
+    background-color: #fff;
+    transform: scale(1.05);
 }
 
 .createRoom__form{
@@ -106,12 +118,11 @@ margin-top: 20px;
 }
 
 .listContact {
-display: flex;
-align-items: center;
-border-radius: 10px;
-padding: 0px 5px;
-transition: 200ms color ease-in;
-
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    transition: 200ms color ease-in;
 }
 
 .listContact:hover {
@@ -121,11 +132,18 @@ transition: 200ms color ease-in;
 
 .list__contactName{
 margin-left: 10px;
-align-items: center;
+// align-items: center;
+display: flex;
+flex-direction: column;
+}
+
+.list__room__wrap{
+    margin-top: 10px;
 }
 
 .list__room{
-padding: 15px;
+padding: 0px;
+flex:1
 }
 
 .name__date{
@@ -141,13 +159,29 @@ padding: 15px;
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 0px;
-    margin-top: 10px;
+    // margin-top: 10px;
+    text-decoration: none;
+}
+.name__contact:hover{
+    text-decoration: none;
+    color: white;
 }
 
 .last__message {
     color: $gray-light-3;
     font-size: 12px;
     line-height: 14px;
+    text-decoration: none;
+    // line-clamp: 1;
+    // max-lines: 1;
+    // background-color: $primary-yellow;
+    // text-overflow: ellipsis;
+    // overflow: hidden;
+    // white-space: pre;
+}
+.last__message:hover{
+    text-decoration: none;
+    color:$gray-light-3;
 }
 
 .date__contact{
@@ -155,4 +189,27 @@ padding: 15px;
     font-weight: 400;
     line-height: 11.72px;
     color: $gray-light;
+}
+
+.group__badge__date{
+    display: flex;
+    flex-direction: column;
+}
+
+.date__badge__right{
+    font-weight: 400;
+    font-size: 8px;
+    color: $gray-light;
+    margin-bottom: 10px;
+}
+
+.date__badge__right:hover{
+    color: $gray-light;
+    text-decoration: none;
+}
+
+.badge__wrap{
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }

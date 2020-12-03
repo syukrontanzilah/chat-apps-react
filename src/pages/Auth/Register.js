@@ -19,6 +19,8 @@ const Register = () => {
 
     const submitHandler = () => {
         setLoading(true);
+            history.push('/')
+
         axios.post("http://192.168.0.123:3000/register", {
             email,
             password,
@@ -33,6 +35,7 @@ const Register = () => {
             const token = res.data.token
             var decode = jwt_decode(token);
             console.log(decode)
+            history.push('/')
         }).catch(e => {
             console.log(e);
             setLoading(false)
@@ -83,8 +86,8 @@ const Register = () => {
             label="Re-enter your password"
             id="password"
             type="password"
-            value={password}
-            onChange ={e => setPassword(e.target.value)}
+            value={rePassword}
+            onChange ={e => setRePassword(e.target.value)}
             />
 
 <button type="button" onClick={()=> submitHandler()} class="btn btn-primary">

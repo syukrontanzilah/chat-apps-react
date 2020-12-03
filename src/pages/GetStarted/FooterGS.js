@@ -4,31 +4,31 @@ const FooterGS = () => {
     return (
         <div className="footer__landingPage">
             <div>
-                <p className="footer__titileChat">ChatApps</p>
+                <a className="footer__titileChat">ChatApps</a>
             </div>
-            <div>
-                <p className="footer__titleHead">Product</p>
-                <p  className="footer__title">Why Us</p>
-                <p  className="footer__title">Features</p>
-                <p className="footer__title">Learn More</p>
+            <div className="footer__options">
+                <a className="footer__titleHead">Product</a>
+                <a  className="footer__title">Why Us</a>
+                <a  className="footer__title">Features</a>
+                <a className="footer__title">Learn More</a>
             </div>
-            <div>
-                <p className="footer__titleHead">Company</p>
-                <p  className="footer__title">About Us</p>
-                <p  className="footer__title">Careers</p>
-                <p className="footer__title">News & Update</p>
+            <div className="footer__options">
+                <a className="footer__titleHead">Company</a>
+                <a  className="footer__title">About Us</a>
+                <a className="footer__title">Careers</a>
+                <a className="footer__title">News & Update</a>
             </div>
-            <div>
-                <p className="footer__titleHead">Social</p>
-                <p  className="footer__title">Facebook</p>
-                <p  className="footer__title">Instagram</p>
-                <p className="footer__title">Twitter</p>
+            <div className="footer__options">
+                <a className="footer__titleHead">Social</a>
+                <a  className="footer__title">Facebook</a>
+                <a  className="footer__title">Instagram</a>
+                <a className="footer__title">Twitter</a>
             </div>
-            <div>
-                <p className="footer__titleHead">Contacts</p>
-                <p  className="footer__title">+62 812343434</p>
-                <p  className="footer__title">email@chatsaps</p>
-                <p className="footer__title">Central Jakarta City, Jakarta</p>
+            <div className="footer__options">
+                <a className="footer__titleHead">Contacts</a>
+                <a  className="footer__title">+62 812343434</a>
+                <a  className="footer__title">email@chatsaps</a>
+                <a className="footer__title">Central Jakarta City, Jakarta</a>
             </div>
         </div>
     )

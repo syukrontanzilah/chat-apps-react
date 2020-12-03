@@ -1,30 +1,44 @@
-import { Navbar, FabBackdrop, Fab, Icon, FabButtons, FabButton, Block, Page } from 'framework7-react';
-
-import React from 'react'
+import React from 'react';
+import { AttachFile, InsertEmoticon, MoreVert, SearchOutlined, Send } from '@material-ui/icons';
+import { Container, Button, Link } from 'react-floating-action-button'
+import '../../styles/Chat.scss'
 
 const FloatingButton = () => {
-    return (
-        <Page>
-        <Navbar title="FAB Backdrop" />
-    
-        {/* FAB Backdrop */}
-        <FabBackdrop slot="fixed" />
-    
-        {/* FAB Right Bottom */}
-        <Fab position="right-bottom" slot="fixed">
-          <Icon ios="f7:plus" aurora="f7:plus" md="material:add"></Icon>
-          <Icon ios="f7:xmark" aurora="f7:xmark" md="material:close"></Icon>
-          <FabButtons position="top">
-            <FabButton label="Action 1">1</FabButton>
-            <FabButton label="Action 2">2</FabButton>
-          </FabButtons>
-        </Fab>
-    
-        <Block>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, quo rem beatae, delectus eligendi est saepe molestias ... voluptatibus eligendi.</p>
-        </Block>
-      </Page>
-    )
+  return (
+    <div style={{backgroundColor:'lightblue'}} className="floating__button__attachfile">
+         <Container>
+            <Link href="#"
+                tooltip="Create note link"
+                // icon="far fa-sticky-note" 
+                >
+                  <AttachFile/>
+                </Link>
+            <Link href="#"
+                tooltip="Add user link"
+                // icon="fas fa-user-plus"
+                >
+                  <SearchOutlined/>
+                </Link>
+                <Link href="#"
+                styles={{backgroundColor: 'green', color:'white'}}
+                tooltip="Add user link"
+                // icon="fas fa-user-plus"
+                >
+                  <SearchOutlined/>
+                </Link>
+            <Button
+                styles={{backgroundColor: '#3866E5', color:'white', position:'relative'}}
+                tooltip="Attach file"
+                icon="fas fa-plus"
+                rotate={true}
+                // onClick={() => alert('FAB Rocks!')} 
+                >
+                  <AttachFile/>
+                </Button>
+        </Container>
+    </div>
+ 
+  )
 }
 
 export default FloatingButton
