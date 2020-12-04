@@ -211,5 +211,7 @@ flex:1
 .badge__wrap{
     justify-content: center;
     align-items: center;
-    display: flex;
+    display: flex;    
+    // align-items: flex-end;
+    // justify-content: right;
 }

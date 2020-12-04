@@ -15,7 +15,100 @@ import CameraAltIcon from '@material-ui/icons/CameraAlt'
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import AddIcon from '@material-ui/icons/Add';
 
-const LeftSide = () => {
+const dataContact = [
+  {
+    name: "Hendika",
+    status: "Online",
+    image:"https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    lastmessage: "Iya teimaksih ya",
+    badgeNumber: 2,
+    date: "10:11"
+  },
+  {
+    name: "Siti Halimah Sadiah",
+    status: "2 minutes ago",
+    image:"https://i.pinimg.com/564x/d1/e0/2e/d1e02eb46bdcbc7efab0338f24904f17.jpg",
+    lastmessage: "iya sampai kita ketemu lagi ya by my friend",
+    badgeNumber: 0,
+    date: 'Yesterday 12:09'
+  },
+  {
+    name: "Siti Zulaikha",
+    status: "12 minutes ago",
+    image:"https://i.pinimg.com/originals/84/46/13/844613f5ed5765f9db6904bd32c8ea59.jpg",
+    lastmessage: 'ya makasih ya',
+    badgeNumber: 100,
+    date: 'Sunday 12:09'
+  }
+]
+
+const dataRoom =[
+  {
+    name: "Mobile Developer",
+    image:"https://mk0buildfireqbf86ll2.kinstacdn.com/wp-content/uploads/2017/04/how-not-to-get-screwed-by-app-developers.jpg",
+    badgeNumber:20,
+    date: "10:11",
+    member: "Ana, tina, Geofani and other"
+  },
+  {
+    name: "Sport LA3",
+    image:"https://www.cityskills.org/wp-content/uploads/2020/02/Piala-Dunia.jpg",
+    badgeNumber:200,
+    date: 'Yesterday 12:09',
+    member: "Starla, Mina, Sandra and other"
+  },
+  {
+    name: "Management Keuangan",
+    image:"https://media.istockphoto.com/photos/dollars-in-100-bills-in-a-mans-hand-closeup-on-a-dark-background-picture-id1227594879",
+    badgeNumber:0,
+    date: 'Sunday 12:09',
+    member: "Sandika, Jo, Prawito and other"
+  },
+  {
+    name: "PERSIB Bandung",
+    image:"https://www.cityskills.org/wp-content/uploads/2020/02/Piala-Dunia.jpg",
+    badgeNumber:2,
+    date: 'Sunday 12:39',
+    member: "Melina, Dina, Geo and other"
+  },
+  {
+    name: "Web Developer",
+    image:"https://mk0buildfireqbf86ll2.kinstacdn.com/wp-content/uploads/2017/04/how-not-to-get-screwed-by-app-developers.jpg",
+    badgeNumber:0,
+    date: 'Sunday 12:49',
+    member: "Sandrina, Jo, Prawito and other"
+  },
+  {
+    name: "Basket Cililin",
+    image:"https://www.cityskills.org/wp-content/uploads/2020/02/Piala-Dunia.jpg",
+    badgeNumber:230,
+    date: 'Sunday 12:59',
+    member: "Hindun, tina, Geofani and other"
+  },
+  {
+    name: "Bonek Mania",
+    image:"https://www.cityskills.org/wp-content/uploads/2020/02/Piala-Dunia.jpg",
+    badgeNumber:12,
+    date: 'Saturday 00:49',
+    member: "Paulinna, tina, Geofani and other"
+  },
+  {
+    name: "UI/UX Developer",
+    image:"https://mk0buildfireqbf86ll2.kinstacdn.com/wp-content/uploads/2017/04/how-not-to-get-screwed-by-app-developers.jpg",
+    badgeNumber:0,
+    date: 'Saturday 00:09',
+    member: "Acintina, tina, Geofani and other"
+  },
+  {
+    name: "Data Scientist",
+    image:"https://mk0buildfireqbf86ll2.kinstacdn.com/wp-content/uploads/2017/04/how-not-to-get-screwed-by-app-developers.jpg",
+    badgeNumber:1,
+    date: 'Saturday 00:09',
+    member: "Lefka, vaniina, Jofani and other"
+  },
+]
+
+const LeftSide = ({setChat}) => {
     const [open, setOpen] = useState(false);
     const handleOpenAddRoom = () => {
         setOpen(true)
@@ -77,34 +170,62 @@ const LeftSide = () => {
         </DialogActions>
       </Dialog>
       <div className="list__room__wrap">
-          <ListRoom 
+   {
+     dataRoom.map((data)=> {
+       return(
+         <ListRoom
+         onClick={()=> setChat({name: data.name, status: data.member, image: data.image})}
+          name={data.name}
+          image={data.image}
+          badgeNumber={data.badgeNumber}
+          date={data.date}
+         />
+       )
+     })
+   }
+
+          {/* <ListRoom 
           image="https://mk0buildfireqbf86ll2.kinstacdn.com/wp-content/uploads/2017/04/how-not-to-get-screwed-by-app-developers.jpg" 
           room="Mob dev"
-          badgeNumber={25}/>
+          badgeNumber={25}
+          date="12.03"/>
           <ListRoom 
           image="https://www.cityskills.org/wp-content/uploads/2020/02/Piala-Dunia.jpg" 
           room="Sport"
-          badgeNumber={1}/>
-          <ListRoom image="https://lh3.googleusercontent.com/proxy/79QVPTTXqIPoAVC7pFKw3PMODH9IZla64dj1Z6NZ268l1g4umEtqtIqK3bXEvaeeVvNi4I6u9jbwxBZSwzVw72t5Rzn8_j3w8nmVa3mewPCHRrr35v6a8L4bYStBtUdNM3sjTheejk6Iz1GnHMuk-pzsuCFODQ" room="Development"/>
-          <ListRoom image="https://digitalambition.co/wp-content/uploads/2018/06/freelance-web-developer.jpg" room="Android developer"
-          badgeNumber={100}
-          />
-          <ListRoom 
-          image="https://media.istockphoto.com/photos/dollars-in-100-bills-in-a-mans-hand-closeup-on-a-dark-background-picture-id1227594879" 
-          room="Management Keuangan & Akuntansi"
-          />
-          <ListRoom room="PSSI" image="https://mk0buildfireqbf86ll2.kinstacdn.com/wp-content/uploads/2017/04/how-not-to-get-screwed-by-app-developers.jpg"/>
-          <ListRoom room="Room OKE"  image="https://www.cityskills.org/wp-content/uploads/2020/02/Piala-Dunia.jpg"/>
-          <ListRoom room="Penyiaran" image="https://digitalambition.co/wp-content/uploads/2018/06/freelance-web-developer.jpg"/>
-          <ListRoom room="Book Store & Stationary"/>
+          badgeNumber={1}
+          date="Yesterday 22.02"
+          /> */}
+     
       </div>
   </Tab>
   <Tab eventKey="message" title="Message">
+  <div className="dropDown__leftSide">
+          <a><ArrowDropDownIcon/> Your Contact</a>
+          <div className="add__room" onClick={()=>{}}>
+            <AddIcon style={{fontSize: 14}}/>
+              Add
+          </div>
+      </div>
     <div className="list__room__wrap">
-        <ListContact name="Hendika" image="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"  lastmessage="Hallo lagi apa kamu" badgeNumber={2}/>
+
+      {
+        dataContact.map(data => {
+          return(
+            <ListContact 
+            onClick={()=> setChat({name: data.name, status: data.status, image: data.image})}
+            name={data.name}
+            image={data.image}
+            lastmessage={data.lastmessage}
+            badgeNumber={data.badgeNumber}
+            date={data.date}
+            />
+          )
+        })
+      }
+        {/* <ListContact onClick={() => setChat({name:'Hendika', status:'online', image:"https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"})} name="Hendika" image="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"  lastmessage="Hallo lagi apa kamu" badgeNumber={2}/>
         <ListContact name="Azizah Assegaff" image="https://i.pinimg.com/564x/d1/e0/2e/d1e02eb46bdcbc7efab0338f24904f17.jpg" lastmessage="Iyah gue juga pengen ketemu loh nih kapan ya bisa nya?" />
         <ListContact name="Siti Hartinah Putri" image="https://i.pinimg.com/originals/84/46/13/844613f5ed5765f9db6904bd32c8ea59.jpg" lastmessage="thanks ya" badgeNumber={21}/>
-        <ListContact name="Rizki permana" image="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"  lastmessage="Ok"/>
+        <ListContact name="Rizki permana" image="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"  lastmessage="Ok"/> */}
     </div>
   </Tab>
 </Tabs>

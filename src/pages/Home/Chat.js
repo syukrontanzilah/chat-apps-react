@@ -9,7 +9,7 @@ import FloatingButton from '../../components/molecules/FloatingButton';
 
 const socket = io.connect('http://localhost:4000')
 
-const Chat = () => {
+const Chat = ({userChat}) => {
     const [message, setMessage] = useState("")
     const [pesan, setPesan] = useState([
         {
@@ -30,7 +30,6 @@ const Chat = () => {
             user:'A'
         }, 
     ])
-    const [iconSend, setIconSend] = useState('gray')
 
     // CONTOH
     // const [state, setStaet] = useState({ pesannya: '', nama: '' })
@@ -81,31 +80,19 @@ const Chat = () => {
     }
     
     useEffect(()=> {
-
     },[])
  
-    // const sendMessage = (e) => {
-    //     e.preventDefault();
-        
-    //     const data = {
-    //         idChat : "",
-    //         message : message
-    //     }
-    //     // setChatData(data)
-    //     console.log(data)
-    //     setMessage("")
-    //     console.log('your message: ', message)
-    // }
+    const {name, status, image, room} = userChat
 
     return (
         <div className="chat__page">
             {/* CHAT HEADER */}
             <div className="chat__header">
                 <div className="chat__user">
-                    <Avatar src="https://i.pinimg.com/originals/e4/04/e8/e404e8a18cb07541d6cdece1877f21d7.jpg"/>
+                    <Avatar src={image}/>
                     <div className="chat__username">
-                        <label className="user__name">Jocelyn</label>
-                        <small className="last__online">Online</small>
+                        <label className="user__name">{name}</label>
+                        <small className="last__online">{status}</small>
                     </div>
                 </div>
                 <div className="search__menu">
@@ -198,14 +185,14 @@ return (
                {/* <IconButton>
                 <AttachFile onClick={() =>{}}/> 
                </IconButton> */}
-<form onSubmit={(e) => onSendMessage(e)}>
-    <input
-    placeholder="Type a message"
-    type="text"
-    onChange={e => setMessage(e.target.value)}
-    value={message}
-    />
-</form>
+                    <form onSubmit={(e) => onSendMessage(e)}>
+                        <input
+                        placeholder="Type a message"
+                        type="text"
+                        onChange={e => setMessage(e.target.value)}
+                        value={message}
+                        />
+                    </form>
 
                 <IconButton
                 disabled={message ? false:true}

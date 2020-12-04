@@ -6,7 +6,7 @@ import '../../styles/LeftSide.scss'
 const ListContact = (props) => {
     return (
         <div 
-        onClick={()=> alert("list contack")}
+        onClick={props.onClick}
         className="listContact">
             <Avatar src={props.image}/>
             <div style={{
@@ -15,16 +15,14 @@ const ListContact = (props) => {
                 // width:'50px'
                 }} className="list__contactName list__room">
                 <a className="name__contact">{props.name}</a>
-                <small  className="last__message">{props.lastmessage}</small>
+                <small  className="last__message">{props.lastmessage.length < 25 ? `${props.lastmessage}` : `${props.lastmessage.substring(0,25)}...`}</small>
             </div>
             <div className="group__badge__date">
-                <a className="date__badge__right">10.37</a>
+            <a className="date__badge__right">{props.date}</a>
                 <div className="badge__wrap">
                 <Badge badgeContent={props.badgeNumber} color="secondary"/>
                 </div>
             </div>
-
-          
         </div>
     )
 }
