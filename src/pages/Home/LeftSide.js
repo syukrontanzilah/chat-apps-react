@@ -13,10 +13,9 @@ import { RoomDummy} from '../../assets';
 const LeftSide = ({setChat}) => {
   const dispatch = useDispatch()
   const ContactDummy = useSelector(state => state.dataDummy)
+  const RoomDummyData = useSelector(state => state.dataDummyRoom)
     const [openRoom, setOpenRoom] = useState(false);
     const [openContact, setOpenContact] = useState(false)
-    const [name, setName] = useState("");
-    const [room, setRoom] = useState("")
     const [contact, setContact]= useState({
       name: "",
       status: "",
@@ -26,6 +25,14 @@ const LeftSide = ({setChat}) => {
       date: '',
       description:''
     })
+  const [room, setRoom] = useState({
+      name: "",
+      image:"",
+      badgeNumber:0,
+      date: '',
+      member: "",
+      description:''
+  })
     const handleOpenAddRoom = () => {
         setOpenRoom(true)
     }
@@ -40,12 +47,16 @@ const LeftSide = ({setChat}) => {
     }
 
     const AddContact =() =>  {
-      const data = [...ContactDummy, contact]
+      // const data = [...ContactDummy, contact]
     dispatch({type:'ADD', data:contact})
     setOpenContact(false)
     }
 
-    
+    const AddRoom = () => {
+          dispatch({type: 'ADD__ROOM', data:room})
+      setOpenRoom(false)    
+    }
+
     const handleChange=(e)=>{
       const name = e.target.name
       const value = e.target.value
@@ -53,10 +64,16 @@ const LeftSide = ({setChat}) => {
       setContact({...contact, [name] : value  })
  }
 
+ const handleChangeRoom = (e) => {
+   const name = e.target.name
+   const value = e.target.value
+   console.log(name, value)
+   setRoom({...room, [name] : value})
+ }
+
     return (
         <div className="leftside">
             <p className="chatApps">ChatApps</p>
-
        <CardUser
        image="https://i0.wp.com/the-latest.news/wp-content/uploads/2020/10/108100-unboxing-the-official-mask-apple-designed-for-its-employees.jpg"
        name="John Alfian"
@@ -77,13 +94,16 @@ const LeftSide = ({setChat}) => {
       <DialogAlert
       titleDialog="Create a room"
       open={openRoom}
+      handleChange={handleChangeRoom}
       onClose={handleCloseRoom}
-      onSubmit={handleCloseRoom}
+      onSubmit={AddRoom}
       name="Room Name"
       desc="Description"
       titleButton="Create Room"
       placeholderName="Room Name"
       placeholderDesc="Description"
+      name1="name"
+      name2="description"
       // valueName=""
       // valueDesc=""
       // onChangeName={}
@@ -91,10 +111,10 @@ const LeftSide = ({setChat}) => {
       />
       <div className="list__room__wrap">
    {
-     RoomDummy.map((data)=> {
+     RoomDummyData.map(data=> {
        return(
          <ListRoom
-         onClick={()=> setChat({name: data.name, status: data.member, image: data.image})}
+         onClick={()=> setChat({name: data.name, status: data.description, image: data.image})}
           name={data.name}
           image={data.image}
           badgeNumber={data.badgeNumber}
@@ -121,20 +141,21 @@ const LeftSide = ({setChat}) => {
       handleChange={handleChange}
       name="Name"
       name1="name"
-      name2="lastmessage"
+      name2="description"
       desc="Description"
       titleButton="Create Contact"
+      placeholderName="Name"
+      placeholderDesc="Description"
       />
-
     <div className="list__room__wrap">
       {
         ContactDummy.map(data => {
           return(
             <ListContact 
-            onClick={()=> setChat({name: data.name, status: data.status, image: data.image})}
+            onClick={()=> setChat({name: data.name, status: data.description, image: data.image})}
             name={data.name}
             image={data.image}
-            lastmessage={data.lastmessage}
+            description={data.description}
             badgeNumber={data.badgeNumber}
             date={data.date}
             />

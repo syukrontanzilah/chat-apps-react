@@ -5,7 +5,8 @@ const ContactDummy = [
     image:"https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     lastmessage: "Iya teimaksih ya",
     badgeNumber: 2,
-    date: "10:11"
+    date: "10:11",
+    description: 'Marketing'
   },
   {
     name: "Siti Halimah Sadiah",
@@ -13,16 +14,9 @@ const ContactDummy = [
     image:"https://i.pinimg.com/564x/d1/e0/2e/d1e02eb46bdcbc7efab0338f24904f17.jpg",
     lastmessage: "iya sampai kita ketemu lagi ya by my friend",
     badgeNumber: 0,
-    date: 'Yesterday 12:09'
+    date: 'Yesterday 12:09',
+    description: 'Frontend Developer'
   },
-  {
-    name: "Siti Zulaikha",
-    status: "12 minutes ago",
-    image:"https://i.pinimg.com/originals/84/46/13/844613f5ed5765f9db6904bd32c8ea59.jpg",
-    lastmessage: 'ya makasih ya',
-    badgeNumber: 100,
-    date: 'Sunday 12:09'
-  }
 ]
 
   const dataDummy = (state = ContactDummy, action) => {
@@ -31,7 +25,6 @@ const ContactDummy = [
     switch (action.type) {
       case "ADD":
         return [...state, 
-          
           action.data,
         ];
       case "REDUCE":
@@ -39,7 +32,6 @@ const ContactDummy = [
           ...state,
           // ...action.data,  
         };
-  
       default:
         return state;
     }
