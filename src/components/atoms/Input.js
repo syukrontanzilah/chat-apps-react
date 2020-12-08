@@ -15,6 +15,7 @@ const Input = (props) => {
         class="form-control" 
         id={props.id} 
         aria-describedby="input"
+        name={props.name}
         placeholder={props.placeholder}/>
 
         {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> */}

@@ -1,5 +1,8 @@
 import React from 'react'
-import { Avatar } from '@material-ui/core'
+import { Avatar } from '@material-ui/core';
+import AddIcon from '@material-ui/icons/Add';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+
 
 const Photo = () => {
     return (
@@ -15,8 +18,8 @@ const ContactInfo = () => {
             <div className="contact__rightInfo">
                 <Avatar src="https://i.pinimg.com/originals/e4/04/e8/e404e8a18cb07541d6cdece1877f21d7.jpg"/>
                 <div className="contact__rightName">
-                    <label className="rightSide__name">Jocelyn</label>
-                    <small className="rightSide__user">@Jocelyn@gmail.com</small>
+                    <a className="rightSide__name">Jocelyn</a>
+                    <a className="rightSide__user">@Jocelyn@gmail.com</a>
                 </div>
             </div>
 
@@ -33,20 +36,23 @@ const ContactInfo = () => {
 {/* Room member */}
 <div className="room__memberWrap">
     <div className="status__edit">
-        <p>Room Member</p>
+        <a>Room Member</a>
         <div className="add__roomMember">
-            + Add
+        <AddIcon style={{fontSize: 14}}/>
+            Add
         </div>
     </div>
     <div className="wrap__imgGroup">
            <div className="wrap__img__group">
         <Avatar src="https://i.pinimg.com/originals/e4/04/e8/e404e8a18cb07541d6cdece1877f21d7.jpg"/>
-        <Avatar src="https://i.pinimg.com/originals/e4/04/e8/e404e8a18cb07541d6cdece1877f21d7.jpg"/>
-        <Avatar src="https://i.pinimg.com/originals/e4/04/e8/e404e8a18cb07541d6cdece1877f21d7.jpg"/>
+        <Avatar style={{marginLeft: -15,}} src="https://i.pinimg.com/originals/e4/04/e8/e404e8a18cb07541d6cdece1877f21d7.jpg"/>
+        <Avatar style={{marginLeft: -15,}} src="https://i.pinimg.com/originals/e4/04/e8/e404e8a18cb07541d6cdece1877f21d7.jpg"/>
+        <Avatar style={{marginLeft: -15,}} src="https://i.pinimg.com/originals/e4/04/e8/e404e8a18cb07541d6cdece1877f21d7.jpg"/>
+        <Avatar style={{marginLeft: -15,}} src="https://i.pinimg.com/originals/e4/04/e8/e404e8a18cb07541d6cdece1877f21d7.jpg"/>
     </div>
     <div className="integer__group">
         234
-        >
+        <ArrowForwardIosIcon style={{fontSize: 18}}/>
     </div>
     </div>
  

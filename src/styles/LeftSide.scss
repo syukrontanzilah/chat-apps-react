@@ -109,12 +109,17 @@ margin-top: 20px;
 .createRoom__form{
     display: flex;
     flex-direction: row;
-    margin-top: 20px;
+    // margin-top: 20px;
     align-items: center;
+    justify-content: center;
+    // background-color: greenyellow;
 }
 
 .createRoom__formInput{
-    margin-left: 20px;
+     margin-right: 20px;
+    //  background-color: green;
+     align-items: center;
+
 }
 
 .listContact {

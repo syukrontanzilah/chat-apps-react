@@ -153,18 +153,6 @@ return (
         )}
 })}
 
-{/* image chat */}
-{/* <div className="chat__messageOther">
-<div>
-  <img className="image__send" src="https://i.pinimg.com/originals/e4/04/e8/e404e8a18cb07541d6cdece1877f21d7.jpg"/>
-</div>
-<small className="text__messageOther">hallo look at picts i send you</small>
-</div>
-<div className="chat__dateWrapOther">
-        <small className="chat__date">12.00</small>
-    </div> */}
-  
-
 
 </div>
 </ScrollToBottom>

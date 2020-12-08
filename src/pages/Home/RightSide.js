@@ -5,14 +5,15 @@ import {AttachFile, MoreVert, SearchOutlined, Message, InsertEmoticon, Mic, Send
 import CloseIcon from '@material-ui/icons/Close';
 import ContactInfo from './ContactInfo';
 
-const RightSide = () => {
+const RightSide = ({userChat}) => {
+    // const {name, status, image, room} = userChat()
     return (
         <div className="rightside">
             <div className="rightside__title">
                 <IconButton>
                     <CloseIcon style={{color:'white'}}/>
                 </IconButton>
-            <label className="rightside__desc">Contact Info</label>
+            <a className="rightside__desc">Contact Info</a>
             </div>
 
             {/* info desc */}

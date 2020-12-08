@@ -18,10 +18,10 @@ const Home = () => {
                 <Chat  userChat={chat}/> : 
                 <div className="chat__page empty__chat">
                     <img className="image__emptyChat" src="https://images.assetsdelivery.com/compings_v2/jemastock/jemastock1908/jemastock190816596.jpg"/>
-                    You have an empty chat
+                    Welcome to ChatApps
                     </div>
                 }
-                <RightSide/>
+                <RightSide userChat={chat}/>
             </div>
         </div>
     )
